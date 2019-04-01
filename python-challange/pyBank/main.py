@@ -40,12 +40,5 @@ print(f"Average Change: ${average_difference}")
 print(f"Greatest Increase in Profits: {max_difference_date}: ${max_difference}")
 print(f"Greatest Decrease in Profits: {min_difference_date}: ${min_difference}")
 
-def writer_function():
-    print("Financial Analysis",file=open("PyBankReults.txt", "a"))
-    print("--------------------------",file=open("PyBankReults.txt", "a"))
-    print(f"Total Months: {totalMonths}",file=open("PyBankReults.txt", "a"))
-    print(f"Total: ${net_total}",file=open("PyBankReults.txt", "a"))
-    print(f"Average Change: ${average_difference}",file=open("PyBankReults.txt", "a"))
-    print(f"Greatest Increase in Profits: {max_difference_date}: ${max_difference}",file=open("PyBankReults.txt", "a"))
-    print(f"Greatest Decrease in Profits: {min_difference_date}: ${min_difference}",file=open("PyBankReults.txt", "a"))
-writer_function()
+with open(newfile, 'w') as txtfile:
+    txtfile.write('\n'.join(financial_analysis))
