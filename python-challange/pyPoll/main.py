@@ -62,16 +62,5 @@ print(f"{canidates[3]}: {vote_percent_Otooley}% ({voter_count_Otooley})")
 #return Key for max value within dict
 print(f"Winner: {max(max_winner, key=max_winner.get)}")
 
-def polling_data_writer():
-    print("----------------------------------", file=open("PyPollReults.txt", "a"))
-    print("         Election Results", file=open("PyPollReults.txt", "a"))
-    print("----------------------------------", file=open("PyPollReults.txt", "a"))
-    print(f"Total Votes: {totalVotes}", file=open("PyPollReults.txt", "a"))
-    print(f"{canidates[0]}: {vote_percent_Khan}% ({voter_count_Khan})", file=open("PyPollReults.txt", "a"))
-    print(f"{canidates[1]}: {vote_percent_Correy}% ({voter_count_Correy})", file=open("PyPollReults.txt", "a"))
-    print(f"{canidates[2]}: {vote_percent_Li}% ({voter_count_Li})", file=open("PyPollReults.txt", "a"))
-    print(f"{canidates[3]}: {vote_percent_Otooley}% ({voter_count_Otooley})", file=open("PyPollReults.txt", "a"))
-    #return Key for max value within dict
-    print(f"Winner: {max(max_winner, key=max_winner.get)}", file=open("PyPollReults.txt", "a"))
-
-polling_data_writer()    
+with open(newfile, 'w') as txtfile:
+    txtfile.write('\n'.join(polling_analysis))  
